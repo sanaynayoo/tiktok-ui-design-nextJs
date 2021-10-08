@@ -1,0 +1,16 @@
+.container {
+  background: greenyellow;
+  display: flex;
+  height: 70px;
+  align-items: center;
+  justify-content: space-around;
+}
+
+.container ul {
+  display: flex;
+  list-style: none;
+}
+
+.container li {
+  padding-left: 20px;
+}

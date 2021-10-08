@@ -1,5 +1,5 @@
 const Index = () => {
-  return <h3>Futuredev Tiktok</h3>;
+  return <h3>TikTok Home Page</h3>;
 };
 
 export default Index;

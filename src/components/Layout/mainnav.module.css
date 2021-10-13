@@ -1,9 +1,16 @@
 .container {
-  background: greenyellow;
+  background: #fff;
   display: flex;
   height: 70px;
   align-items: center;
   justify-content: space-around;
+  box-shadow: 0 0 3px rgba(0, 0, 0, 0.23);
+}
+
+.imageContainer a {
+  font-size: 27px;
+  font-weight: bold;
+  margin-left: 5px;
 }
 
 .container ul {
@@ -13,4 +20,56 @@
 
 .container li {
   padding-left: 20px;
+}
+
+.searchContainer {
+  width: 22%;
+  display: flex;
+  background-color: #f1f1f2;
+  padding: 5px;
+  border-radius: 30px;
+  overflow: hidden;
+  justify-content: space-between;
+}
+
+.searchContainer input {
+  border: none;
+  width: 85%;
+  background-color: #f1f1f2;
+  padding: 7px;
+}
+
+.searchContainer button {
+  border: none;
+  width: 15%;
+  /* height: 100%; */
+  padding: 7px;
+  cursor: pointer;
+}
+.searchContainer button:hover {
+  background-color: #e1e1e2;
+}
+.uploadContainer {
+  display: flex;
+  width: 15%;
+  padding: 10px;
+  align-items: center;
+  justify-content: space-evenly;
+  /* background-color: green; */
+}
+.uploadContainer a:hover {
+  text-decoration: underline;
+}
+
+.loginContent {
+  width: 50%;
+  margin: 5px;
+  border: none;
+  border-radius: 5px;
+  padding: 10px;
+  background-color: #ed3a53;
+}
+.loginContent a {
+  font-size: 14px;
+  color: #fff;
 }

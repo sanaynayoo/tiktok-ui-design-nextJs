@@ -34,7 +34,7 @@
 }
 .inputContainer input {
   border: 0px solid rgb(161, 153, 153);
-  width: 78%;
+  width: 80%;
   padding: 12px;
   font-size: 15px;
   background-color: var(--color-search-back);
@@ -42,10 +42,11 @@
 .inputContainer button {
   width: 20%;
   border: none;
-  /* min-height: 100%; */
+  border-left: 1px solid #ddd;
 }
 .inputContainer button:hover {
   width: 20%;
+  cursor: pointer;
   background-color: var(--color-search-hover);
   /* min-height: 100%; */
 }

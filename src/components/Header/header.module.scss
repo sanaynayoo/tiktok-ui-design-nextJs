@@ -1,0 +1,8 @@
+@import "../../../styles/colors/colors";
+
+.container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: $color-success;
+}

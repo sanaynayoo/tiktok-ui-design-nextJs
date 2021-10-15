@@ -1,0 +1,29 @@
+@import "./colors/colors";
+
+html,
+:root {
+  --color-grey-50: #{$color-grey};
+  --color-grey-100: #{$color-grey-100};
+  --color-success-500: #{$color-success};
+  --color-nav-500: #{$color-nav};
+  --color-search-back: #{$color-search-back};
+  --color-search-hover: #{$color-search-hover};
+  --color-login-button: #{$color-login-button};
+  --color-font-100: #{$color-font-100};
+}
+
+body {
+  padding: 0;
+  margin: 0;
+  font-family: -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen,
+    Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+* {
+  box-sizing: border-box;
+}

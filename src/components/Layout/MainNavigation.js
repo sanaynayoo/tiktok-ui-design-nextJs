@@ -1,5 +1,5 @@
 import Link from "next/link";
-import styles from "./mainnav.module.css";
+import styles from "./mainnav.module.scss";
 import Image from "next/image";
 
 const MainNavigation = () => {

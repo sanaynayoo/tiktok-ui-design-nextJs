@@ -1,4 +1,4 @@
-import styls from "../../../styles/Home.module.css";
+import styls from "../../../styles/Home.module.scss";
 
 const Upload = () => {
   return (

@@ -6,6 +6,7 @@ function MyApp({ Component, pageProps }) {
   return (
     <Layout>
       <Component {...pageProps} />
+      <div id="modal-root"></div>
     </Layout>
   );
 }

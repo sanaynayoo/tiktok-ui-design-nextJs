@@ -12,12 +12,16 @@ const Index = () => {
 
       <button
         className={styles.btnContainer}
-        onClick={() => setShowModal(!showModal)}
+        onClick={() => setShowModal(true)}
       >
-        {showModal ? "hideModal" : "showModal"}
+        Show Modal
       </button>
 
-      <Modal show={showModal}>
+      <Modal
+        show={showModal}
+        closeModal={() => setShowModal(false)}
+        Title="Login To TikTok"
+      >
         <ul>
           <li>React Native Js</li>
           <li>React Js</li>

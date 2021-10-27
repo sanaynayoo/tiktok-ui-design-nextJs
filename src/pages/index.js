@@ -1,7 +1,9 @@
 import React, { useState } from "react";
 
+// Components
 import styles from "../../styles/Home.module.scss";
 import Modal from "../components/Modal/Modal";
+import Auth from "../components/Auth/Auth";
 
 const Index = () => {
   const [showModal, setShowModal] = useState(false);
@@ -22,11 +24,7 @@ const Index = () => {
         closeModal={() => setShowModal(false)}
         Title="Login To TikTok"
       >
-        <ul>
-          <li>React Native Js</li>
-          <li>React Js</li>
-          <li>Next Js</li>
-        </ul>
+        <Auth />
       </Modal>
     </div>
   );

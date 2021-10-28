@@ -1,4 +1,6 @@
 import React, { useState } from "react";
+import Link from "next/link";
+import Image from "next/image";
 
 // Components
 import styles from "../../styles/Home.module.scss";

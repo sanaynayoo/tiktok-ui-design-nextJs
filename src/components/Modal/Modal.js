@@ -22,12 +22,13 @@ const Modal = ({ children, show, closeModal, Title }) => {
         </div>
         <div className={styles.modalContentItem}>
           <div className={styles.headerContent}>
-            <h3>{Title}</h3>
+            <a className={styles.titleText}>{Title}</a>
             <div className={styles.modalContainer}>{children}</div>
           </div>
 
-          <div>
-            <h3>Footer</h3>
+          <div className={styles.footerContent}>
+            <span>Don’t have an account?</span>
+            <a href="#">Sign up</a>
           </div>
         </div>
       </div>

@@ -13,8 +13,8 @@ const Auth = () => {
           <Image
             src="/static/icons/qrcode.svg"
             alt="qr icon"
-            width={20}
-            height={18}
+            width={25}
+            height={20}
           />
         </div>
         <Link href="/">
@@ -29,8 +29,8 @@ const Auth = () => {
           <Image
             src="/static/icons/user.svg"
             alt="qr icon"
-            width={20}
-            height={18}
+            width={25}
+            height={20}
           />
         </div>
         <Link href="/">
@@ -45,12 +45,76 @@ const Auth = () => {
           <Image
             src="/static/icons/fb.svg"
             alt="qr icon"
-            width={20}
-            height={18}
+            width={25}
+            height={20}
           />
         </div>
         <Link href="/">
-          <a>Facebook</a>
+          <a>Containue with Facebook</a>
+        </Link>
+      </div>
+
+      {/* Google */}
+
+      <div className={styles.iconContent}>
+        <div className={styles.iconItem}>
+          <Image
+            src="/static/icons/google.svg"
+            alt="qr icon"
+            width={25}
+            height={20}
+          />
+        </div>
+        <Link href="/">
+          <a>Containue with Google</a>
+        </Link>
+      </div>
+
+      {/* Twitter */}
+
+      <div className={styles.iconContent}>
+        <div className={styles.iconItem}>
+          <Image
+            src="/static/icons/twitter.svg"
+            alt="qr icon"
+            width={25}
+            height={20}
+          />
+        </div>
+        <Link href="/">
+          <a>Continue with Twitter</a>
+        </Link>
+      </div>
+
+      {/* Apple */}
+
+      <div className={styles.iconContent}>
+        <div className={styles.iconItem}>
+          <Image
+            src="/static/icons/apple.svg"
+            alt="qr icon"
+            width={25}
+            height={20}
+          />
+        </div>
+        <Link href="/">
+          <a>Continue with Apple</a>
+        </Link>
+      </div>
+
+      {/* Instragram */}
+
+      <div className={styles.iconContent}>
+        <div className={styles.iconItem}>
+          <Image
+            src="/static/icons/instragram.svg"
+            alt="qr icon"
+            width={25}
+            height={20}
+          />
+        </div>
+        <Link href="/">
+          <a>Continue with Instragram</a>
         </Link>
       </div>
     </>

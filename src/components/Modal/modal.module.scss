@@ -24,8 +24,8 @@
 
 .closeModalContent {
   display: flex;
-  align-items: flex-end;
-  justify-content: flex-end;
+  align-items: center;
+  justify-content: space-between;
   a {
     background-color: var(--color-search-hover);
     width: 30px;
@@ -35,6 +35,10 @@
     padding-top: 5px;
     border-radius: 50px;
   }
+}
+
+.backContainer {
+  margin-left: 10px;
 }
 
 .modalContentItem {

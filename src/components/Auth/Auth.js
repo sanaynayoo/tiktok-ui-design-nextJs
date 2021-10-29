@@ -1,10 +1,21 @@
+import { useState } from "react";
+
 import Link from "next/link";
 import Image from "next/image";
 
 import styles from "./auth.module.scss";
 
 const Auth = () => {
-  return (
+  const [hideItem, setHideItem] = useState(false);
+
+  const useQrHandler = () => {
+    console.log("useQr Handler working >>>>>>>");
+    setHideItem(true);
+  };
+
+  console.log("hide state >>>", hideItem);
+
+  return !hideItem ? (
     <>
       {/* qrcode */}
 
@@ -17,9 +28,9 @@ const Auth = () => {
             height={20}
           />
         </div>
-        <Link href="/">
+        <div className={styles.itemCotnet} onClick={useQrHandler}>
           <a>Use QR code</a>
-        </Link>
+        </div>
       </div>
 
       {/* User */}
@@ -28,7 +39,7 @@ const Auth = () => {
         <div className={styles.iconItem}>
           <Image
             src="/static/icons/user.svg"
-            alt="qr icon"
+            alt="user icon"
             width={25}
             height={20}
           />
@@ -44,7 +55,7 @@ const Auth = () => {
         <div className={styles.iconItem}>
           <Image
             src="/static/icons/fb.svg"
-            alt="qr icon"
+            alt="fb icon"
             width={25}
             height={20}
           />
@@ -60,7 +71,7 @@ const Auth = () => {
         <div className={styles.iconItem}>
           <Image
             src="/static/icons/google.svg"
-            alt="qr icon"
+            alt="google icon"
             width={25}
             height={20}
           />
@@ -76,7 +87,7 @@ const Auth = () => {
         <div className={styles.iconItem}>
           <Image
             src="/static/icons/twitter.svg"
-            alt="qr icon"
+            alt="twitter icon"
             width={25}
             height={20}
           />
@@ -92,7 +103,7 @@ const Auth = () => {
         <div className={styles.iconItem}>
           <Image
             src="/static/icons/apple.svg"
-            alt="qr icon"
+            alt="apple icon"
             width={25}
             height={20}
           />
@@ -108,17 +119,17 @@ const Auth = () => {
         <div className={styles.iconItem}>
           <Image
             src="/static/icons/instragram.svg"
-            alt="qr icon"
+            alt="instagram icon"
             width={25}
             height={20}
           />
         </div>
         <Link href="/">
-          <a>Continue with Instragram</a>
+          <a>Continue with Instagram</a>
         </Link>
       </div>
     </>
-  );
+  ) : null;
 };
 
 export default Auth;

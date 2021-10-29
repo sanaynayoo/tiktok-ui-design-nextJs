@@ -1,11 +1,12 @@
 import { useState, useEffect } from "react";
 import styles from "./modal.module.scss";
+import Image from "next/image";
 
 import ReactDOM from "react-dom";
 
 // import {Fragment} from 'react';
 
-const Modal = ({ children, show, closeModal, Title }) => {
+const Modal = ({ children, show, closeModal, Title, backHandler }) => {
   const [isBrowser, setIsBrowse] = useState(false);
 
   useEffect(() => {
@@ -16,6 +17,14 @@ const Modal = ({ children, show, closeModal, Title }) => {
     <div className={styles.modalBody}>
       <div className={styles.modalContent}>
         <div className={styles.closeModalContent}>
+          <div className={styles.backContainer} onClick={backHandler}>
+            <Image
+              src="/static/icons/back.svg"
+              alt="back icon"
+              width={25}
+              height={20}
+            />
+          </div>
           <a href="#" onClick={closeModal}>
             X
           </a>

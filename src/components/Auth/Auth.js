@@ -5,15 +5,7 @@ import Image from "next/image";
 
 import styles from "./auth.module.scss";
 
-const Auth = () => {
-  const [hideItem, setHideItem] = useState(false);
-
-  const useQrHandler = () => {
-    console.log("useQr Handler working >>>>>>>");
-    setHideItem(true);
-  };
-
-  console.log("hide state >>>", hideItem);
+const Auth = ({ useQrHandler, hideItem }) => {
 
   return !hideItem ? (
     <>
@@ -129,7 +121,11 @@ const Auth = () => {
         </Link>
       </div>
     </>
-  ) : null;
+  ) : (
+    <div>
+      <h3>Welcome QR Code</h3>
+    </div>
+  );
 };
 
 export default Auth;

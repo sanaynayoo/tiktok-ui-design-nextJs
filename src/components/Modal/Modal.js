@@ -6,7 +6,14 @@ import ReactDOM from "react-dom";
 
 // import {Fragment} from 'react';
 
-const Modal = ({ children, show, closeModal, Title, backHandler }) => {
+const Modal = ({
+  children,
+  show,
+  closeModal,
+  Title,
+  backHandler,
+  showBackIcon,
+}) => {
   const [isBrowser, setIsBrowse] = useState(false);
 
   useEffect(() => {
@@ -18,12 +25,14 @@ const Modal = ({ children, show, closeModal, Title, backHandler }) => {
       <div className={styles.modalContent}>
         <div className={styles.closeModalContent}>
           <div className={styles.backContainer} onClick={backHandler}>
-            <Image
-              src="/static/icons/back.svg"
-              alt="back icon"
-              width={25}
-              height={20}
-            />
+            {showBackIcon ? (
+              <Image
+                src="/static/icons/back.svg"
+                alt="back icon"
+                width={25}
+                height={20}
+              />
+            ) : null}
           </div>
           <a href="#" onClick={closeModal}>
             X

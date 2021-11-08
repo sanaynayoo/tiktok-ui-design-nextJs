@@ -5,6 +5,7 @@ import Image from "next/image";
 
 // Components
 import styles from "./auth.module.scss";
+import UseQR from "../../components/useQr/useQr";
 
 const Auth = ({ authItemHandler, showItem, data }) => {
   return showItem ? (
@@ -25,9 +26,7 @@ const Auth = ({ authItemHandler, showItem, data }) => {
       ))}
     </>
   ) : (
-    <div>
-      <h3>Welcome QR Code</h3>
-    </div>
+    <UseQR />
   );
 };
 

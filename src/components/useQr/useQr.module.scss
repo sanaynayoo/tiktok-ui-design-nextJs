@@ -1,0 +1,38 @@
+.authQrContainer {
+  // background-color: red;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+}
+
+.authQrText {
+  // background-color: green;
+  width: 250px;
+  p {
+    color: #000;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    font-size: 12px;
+    // background-color: green;
+  }
+}
+
+.authQrItem {
+  background-color: red;
+  align-items: center;
+}
+
+.authQuestion {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-top: 50px;
+  p {
+    color: var(--color-login-button);
+    font-size: 14px;
+    font-weight: bold;
+    margin-left: 5px;
+  }
+}

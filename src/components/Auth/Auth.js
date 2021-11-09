@@ -8,6 +8,18 @@ import styles from "./auth.module.scss";
 import UseQR from "../../components/useQr/useQr";
 
 const Auth = ({ authItemHandler, showItem, data }) => {
+  const [showContent, setShowContent] = useState(true);
+
+  const instructionHandler = () => {
+    console.log(" instruction >>");
+    setShowContent(false);
+  };
+
+  const onMouseLeaveHandler = () => {
+    console.log("onMouse Leave >>");
+    setShowContent(true);
+  };
+
   return showItem ? (
     <>
       {data.map((item) => (
@@ -26,7 +38,11 @@ const Auth = ({ authItemHandler, showItem, data }) => {
       ))}
     </>
   ) : (
-    <UseQR />
+    <UseQR
+      instructionHandler={instructionHandler}
+      onMouseLeaveHandler={onMouseLeaveHandler}
+      showContent={showContent}
+    />
   );
 };
 

@@ -8,7 +8,7 @@ const authItem = [
   {
     id: 2,
     image: "/static/icons/user.svg",
-    name: "User phone/email / username",
+    name: "User phone/email /username",
     alt: "user icon",
   },
   {

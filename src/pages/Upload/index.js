@@ -8,7 +8,7 @@ import AuthItem from "../../data/auth";
 
 const Upload = () => {
   const [showModal, setShowModal] = useState(false);
-  const [showItem, setShowItem] = useState(true);
+  const [showItem, setShowItem] = useState(0);
   const [showBackIcon, setShowBackIcon] = useState(false);
   const [modalTitle, setModalTitle] = useState("");
 
@@ -18,17 +18,27 @@ const Upload = () => {
   }, []);
 
   const authHandler = (item) => {
+    setShowItem(item.id);
+    setShowBackIcon(true);
     if (item.id === 1) {
-      setShowItem(false);
-      setShowBackIcon(true);
       setModalTitle("Log in with QR code");
+    } else if (item.id === 2) {
+      setModalTitle("Log in");
+    } else if (item.id === 3) {
+      setModalTitle("Facebook");
+    } else if (item.id === 4) {
+      setModalTitle("Google");
+    } else if (item.id === 5) {
+      setModalTitle("Twitter");
+    } else if (item.id === 6) {
+      setModalTitle("Apple");
     } else {
-      console.log("clicked item -->", item.name);
+      setModalTitle("Instagram");
     }
   };
 
   const backHandlerAction = () => {
-    setShowItem(true);
+    setShowItem(0);
     setShowBackIcon(false);
     setModalTitle("Login To TikTok");
   };

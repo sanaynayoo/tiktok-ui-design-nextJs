@@ -10,17 +10,15 @@ import UseQR from "../../components/useQr/useQr";
 const Auth = ({ authItemHandler, showItem, data }) => {
   const [showContent, setShowContent] = useState(true);
 
-  const instructionHandler = () => {
-    console.log(" instruction >>");
+  const onMouseOverHandler = () => {
     setShowContent(false);
   };
 
   const onMouseLeaveHandler = () => {
-    console.log("onMouse Leave >>");
     setShowContent(true);
   };
 
-  return showItem ? (
+  return showItem === 0 ? (
     <>
       {data.map((item) => (
         <div
@@ -37,12 +35,24 @@ const Auth = ({ authItemHandler, showItem, data }) => {
         </div>
       ))}
     </>
-  ) : (
+  ) : showItem === 1 ? (
     <UseQR
-      instructionHandler={instructionHandler}
+      onMouseOverHandler={onMouseOverHandler}
       onMouseLeaveHandler={onMouseLeaveHandler}
       showContent={showContent}
     />
+  ) : showItem === 2 ? (
+    <h5>User Name Modal</h5>
+  ) : showItem === 3 ? (
+    <h5>Facebook Modal</h5>
+  ) : showItem === 4 ? (
+    <h5>Google Modal</h5>
+  ) : showItem === 5 ? (
+    <h5>Twitter Modal</h5>
+  ) : showItem === 6 ? (
+    <h5>Apple Modal</h5>
+  ) : (
+    <h5>Instagram Modal</h5>
   );
 };
 

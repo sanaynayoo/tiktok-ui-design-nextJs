@@ -3,7 +3,7 @@ import Image from "next/image";
 // Components
 import styles from "./useQr.module.scss";
 
-const useQr = ({ instructionHandler, onMouseLeaveHandler, showContent }) => {
+const useQr = ({ onMouseOverHandler, onMouseLeaveHandler, showContent }) => {
   return (
     <div className={styles.authQrContainer}>
       <div className={styles.qrCodeContent}>
@@ -12,8 +12,8 @@ const useQr = ({ instructionHandler, onMouseLeaveHandler, showContent }) => {
             <Image
               src="/static/images/qrCode.png"
               alt="qr code"
-              width={150}
-              height={150}
+              width={125}
+              height={130}
             />
 
             <div className={styles.authQrText}>
@@ -47,7 +47,7 @@ const useQr = ({ instructionHandler, onMouseLeaveHandler, showContent }) => {
 
       <div
         className={styles.authQuestion}
-        onMouseOver={instructionHandler}
+        onMouseOver={onMouseOverHandler}
         onMouseLeave={onMouseLeaveHandler}
       >
         <Image

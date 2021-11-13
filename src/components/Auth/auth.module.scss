@@ -22,3 +22,91 @@
   cursor: pointer;
 }
 
+.container {
+  // background-color: green;
+  width: 100%;
+}
+.labelTitle {
+  // background-color: #ff8899;
+  display: flex;
+  justify-content: space-between;
+  label {
+    font-size: 13px;
+    font-weight: bold;
+  }
+  .phoneLabel {
+    font-size: 15px;
+  }
+}
+
+.selectedContainer {
+  // background-color: green;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  padding: 10px;
+
+  // copy from tiktok
+  border-radius: 4px;
+  position: relative;
+  margin-top: 8px;
+  background: rgba(22, 24, 35, 0.06);
+  border: 1.5px solid rgba(22, 24, 35, 0.06);
+
+  input {
+    padding-left: 12px;
+    background: transparent;
+    outline: none;
+    border: none;
+  }
+}
+
+.labelCountry {
+  // background-color: red;
+  width: 30%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  cursor: pointer;
+  label {
+    font-size: 14px;
+  }
+}
+
+.lineContent {
+  width: 1px;
+  background-color: #d7d7d9;
+  height: 28px;
+}
+
+.enterCodeContainer {
+  margin-top: 10px;
+  width: 100%;
+  // copy from tiktok
+  display: flex;
+  flex-direction: row;
+  border-radius: 4px;
+  position: relative;
+  margin-top: 8px;
+  border: 1.5px solid rgba(22, 24, 35, 0.06);
+  input {
+    width: 60%;
+    // padding-left: 12px;
+    padding: 16px 10px 16px 10px;
+    background: rgba(22, 24, 35, 0.06);
+    outline: none;
+    border: none;
+    height: 100%;
+  }
+  .enterCodeLabel {
+    width: 40%;
+    height: 100%;
+    display: flex;
+    align-self: center;
+    justify-content: center;
+    label {
+      color: #adaeb3;
+      font-weight: bold;
+    }
+  }
+}

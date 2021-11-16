@@ -10,6 +10,7 @@ import UserEmail from "../userEmail/userEmail";
 
 const Auth = ({ authItemHandler, showItem, data }) => {
   const [showContent, setShowContent] = useState(true);
+  const [showPassword, setShowPassword] = useState(false);
 
   const onMouseOverHandler = () => {
     setShowContent(false);
@@ -17,6 +18,18 @@ const Auth = ({ authItemHandler, showItem, data }) => {
 
   const onMouseLeaveHandler = () => {
     setShowContent(true);
+  };
+
+  const loginPwdHander = () => {
+    setShowPassword(true);
+  };
+
+  const forgotPwdHandler = () => {
+    console.log("ForgotPwd handler >>");
+  };
+
+  const loginCodeHander = () => {
+    setShowPassword(false);
   };
 
   return showItem === 0 ? (
@@ -43,7 +56,12 @@ const Auth = ({ authItemHandler, showItem, data }) => {
       showContent={showContent}
     />
   ) : showItem === 2 ? (
-    <UserEmail />
+    <UserEmail
+      loginPwdHander={loginPwdHander}
+      showPassword={showPassword}
+      forgotPwdHandler={forgotPwdHandler}
+      loginCodeHandler={loginCodeHander}
+    />
   ) : showItem === 3 ? (
     <h5>Facebook Modal</h5>
   ) : showItem === 4 ? (

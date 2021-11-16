@@ -1,7 +1,12 @@
 import Image from "next/image";
 import styles from "./userEmail.module.scss";
 
-const userEmail = () => {
+const userEmail = ({
+  loginPwdHander,
+  showPassword,
+  forgotPwdHandler,
+  loginCodeHandler,
+}) => {
   return (
     <div className={styles.container}>
       {/* title label */}
@@ -34,18 +39,44 @@ const userEmail = () => {
 
       {/* enter code */}
 
-      <div className={styles.enterCodeContainer}>
-        <input type="text" placeholder="Enter 4-digit Code" />
-        <div className={styles.enterCodeLabel}>
-          <label>Send code</label>
+      {showPassword ? (
+        <div className={styles.pwdContainer}>
+          <input type="text" placeholder="Password" />
+          <div className={styles.eyesContainer}>
+            <Image
+              src="/static/icons/closeEye.svg"
+              alt="Close Eye"
+              width={18}
+              height={18}
+            />
+          </div>
         </div>
-      </div>
+      ) : (
+        <div className={styles.enterCodeContainer}>
+          <input type="text" placeholder="Enter 4-digit Code" />
+          <div className={styles.enterCodeLabel}>
+            <label>Send code</label>
+          </div>
+        </div>
+      )}
 
       {/* login password */}
 
-      <div className={styles.lginPwdContainer}>
-        <label>Log in with password</label>
-      </div>
+      {showPassword ? (
+        <div className={styles.forgotContainer}>
+          <label onClick={forgotPwdHandler}>Forgot password?</label>
+          <div className={styles.linePwd}>
+            <p></p>
+          </div>
+          <label className={styles.loginCodeLabel} onClick={loginCodeHandler}>
+            Login with code
+          </label>
+        </div>
+      ) : (
+        <div className={styles.lginPwdContainer} onClick={loginPwdHander}>
+          <label>Log in with password</label>
+        </div>
+      )}
 
       {/* login Btn */}
 

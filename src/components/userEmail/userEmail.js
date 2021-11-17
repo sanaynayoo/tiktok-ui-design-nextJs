@@ -6,14 +6,17 @@ const userEmail = ({
   showPassword,
   forgotPwdHandler,
   loginCodeHandler,
+  leftLabel,
+  rightLable,
+  forgotAction,
 }) => {
   return (
     <div className={styles.container}>
       {/* title label */}
 
       <div className={styles.labelTitle}>
-        <label className={styles.phoneLabel}>Phone</label>
-        <label>log in with email or username</label>
+        <label className={styles.phoneLabel}>{leftLabel}</label>
+        <label>{rightLable}</label>
       </div>
 
       {/* select phone no */}
@@ -40,17 +43,28 @@ const userEmail = ({
       {/* enter code */}
 
       {showPassword ? (
-        <div className={styles.pwdContainer}>
-          <input type="text" placeholder="Password" />
-          <div className={styles.eyesContainer}>
-            <Image
-              src="/static/icons/closeEye.svg"
-              alt="Close Eye"
-              width={18}
-              height={18}
-            />
+        <>
+          {forgotAction ? (
+            <div className={styles.enterCodeContainer}>
+              <input type="text" placeholder="Enter 4-digit Code" />
+              <div className={styles.enterCodeLabel}>
+                <label>Send code</label>
+              </div>
+            </div>
+          ) : null}
+
+          <div className={styles.pwdContainer}>
+            <input type="text" placeholder="Password" />
+            <div className={styles.eyesContainer}>
+              <Image
+                src="/static/icons/closeEye.svg"
+                alt="Close Eye"
+                width={18}
+                height={18}
+              />
+            </div>
           </div>
-        </div>
+        </>
       ) : (
         <div className={styles.enterCodeContainer}>
           <input type="text" placeholder="Enter 4-digit Code" />
@@ -64,13 +78,20 @@ const userEmail = ({
 
       {showPassword ? (
         <div className={styles.forgotContainer}>
-          <label onClick={forgotPwdHandler}>Forgot password?</label>
-          <div className={styles.linePwd}>
-            <p></p>
-          </div>
-          <label className={styles.loginCodeLabel} onClick={loginCodeHandler}>
-            Login with code
-          </label>
+          {!forgotAction ? (
+            <>
+              <label onClick={forgotPwdHandler}>Forgot password?</label>
+              <div className={styles.linePwd}>
+                <p></p>
+              </div>
+              <label
+                className={styles.loginCodeLabel}
+                onClick={loginCodeHandler}
+              >
+                Login with code
+              </label>
+            </>
+          ) : null}
         </div>
       ) : (
         <div className={styles.lginPwdContainer} onClick={loginPwdHander}>

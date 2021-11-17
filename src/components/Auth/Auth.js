@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
 
 import Link from "next/link";
 import Image from "next/image";
@@ -8,9 +8,19 @@ import styles from "./auth.module.scss";
 import UseQR from "../../components/useQr/useQr";
 import UserEmail from "../userEmail/userEmail";
 
-const Auth = ({ authItemHandler, showItem, data }) => {
+const Auth = ({
+  authItemHandler,
+  showItem,
+  data,
+  forgotPwdHandler,
+  leftLabel,
+  rightLable,
+  showPassword,
+  loginPwdHander,
+  loginCodeHander,
+  forgotAction,
+}) => {
   const [showContent, setShowContent] = useState(true);
-  const [showPassword, setShowPassword] = useState(false);
 
   const onMouseOverHandler = () => {
     setShowContent(false);
@@ -18,18 +28,6 @@ const Auth = ({ authItemHandler, showItem, data }) => {
 
   const onMouseLeaveHandler = () => {
     setShowContent(true);
-  };
-
-  const loginPwdHander = () => {
-    setShowPassword(true);
-  };
-
-  const forgotPwdHandler = () => {
-    console.log("ForgotPwd handler >>");
-  };
-
-  const loginCodeHander = () => {
-    setShowPassword(false);
   };
 
   return showItem === 0 ? (
@@ -61,6 +59,9 @@ const Auth = ({ authItemHandler, showItem, data }) => {
       showPassword={showPassword}
       forgotPwdHandler={forgotPwdHandler}
       loginCodeHandler={loginCodeHander}
+      leftLabel={leftLabel}
+      rightLable={rightLable}
+      forgotAction={forgotAction}
     />
   ) : showItem === 3 ? (
     <h5>Facebook Modal</h5>

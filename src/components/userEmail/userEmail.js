@@ -9,6 +9,9 @@ const userEmail = ({
   leftLabel,
   rightLable,
   forgotAction,
+  pwdPlaceholder,
+  eyesHandler,
+  eyesAction,
 }) => {
   return (
     <div className={styles.container}>
@@ -54,14 +57,23 @@ const userEmail = ({
           ) : null}
 
           <div className={styles.pwdContainer}>
-            <input type="text" placeholder="Password" />
-            <div className={styles.eyesContainer}>
-              <Image
-                src="/static/icons/closeEye.svg"
-                alt="Close Eye"
-                width={18}
-                height={18}
-              />
+            <input type="text" placeholder={pwdPlaceholder} />
+            <div className={styles.eyesContainer} onClick={eyesHandler}>
+              {eyesAction ? (
+                <Image
+                  src="/static/icons/openEye.svg"
+                  alt="Close Eye"
+                  width={18}
+                  height={18}
+                />
+              ) : (
+                <Image
+                  src="/static/icons/closeEye.svg"
+                  alt="Close Eye"
+                  width={18}
+                  height={18}
+                />
+              )}
             </div>
           </div>
         </>

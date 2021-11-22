@@ -15,6 +15,8 @@ const Upload = () => {
   const [rightLabel, setRightLabel] = useState("");
   const [showPassword, setShowPassword] = useState(false);
   const [forgotAction, setForgotAction] = useState(false);
+  const [placeHolder, setPlaceHolder] = useState("Password");
+  const [closeEye, setCloseEye] = useState(false);
 
   useEffect(() => {
     setShowModal(true);
@@ -46,16 +48,30 @@ const Upload = () => {
   };
 
   const backHandlerAction = () => {
-    setShowItem(0);
-    setShowBackIcon(false);
-    setModalTitle("Login To TikTok");
+    if (forgotAction) {
+      setForgotAction(false);
+      setPlaceHolder("Password");
+    } else if (showPassword) {
+      setShowPassword(false);
+    } else {
+      setShowItem(0);
+      setShowBackIcon(false);
+      setModalTitle("Login To TikTok");
+      setPlaceHolder("Password");
+    }
   };
 
   const forgotPwdHandler = () => {
     setModalTitle("Reset Password");
     setLeftlabel("Enter phone number");
     setRightLabel("Reset with email");
+    setPlaceHolder("Enter new password");
     setForgotAction(true);
+    setCloseEye(false);
+  };
+
+  const eyesHandler = () => {
+    setCloseEye(!closeEye);
   };
 
   const loginPwdHander = () => {
@@ -88,6 +104,9 @@ const Upload = () => {
           loginPwdHander={loginPwdHander}
           loginCodeHander={loginCodeHander}
           forgotAction={forgotAction}
+          pwdPlaceholder={placeHolder}
+          eyes={closeEye}
+          eyesHandler={eyesHandler}
         />
       </Modal>
     </div>

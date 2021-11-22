@@ -19,6 +19,9 @@ const Auth = ({
   loginPwdHander,
   loginCodeHander,
   forgotAction,
+  pwdPlaceholder,
+  eyes,
+  eyesHandler,
 }) => {
   const [showContent, setShowContent] = useState(true);
 
@@ -62,6 +65,9 @@ const Auth = ({
       leftLabel={leftLabel}
       rightLable={rightLable}
       forgotAction={forgotAction}
+      pwdPlaceholder={pwdPlaceholder}
+      eyesHandler={eyesHandler}
+      eyesAction={eyes}
     />
   ) : showItem === 3 ? (
     <h5>Facebook Modal</h5>

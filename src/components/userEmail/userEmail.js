@@ -12,6 +12,7 @@ const userEmail = ({
   pwdPlaceholder,
   eyesHandler,
   eyesAction,
+  rightLableHandler,
 }) => {
   return (
     <div className={styles.container}>
@@ -19,7 +20,9 @@ const userEmail = ({
 
       <div className={styles.labelTitle}>
         <label className={styles.phoneLabel}>{leftLabel}</label>
-        <label>{rightLable}</label>
+        <label onClick={rightLableHandler} className={styles.rightLabelContent}>
+          {rightLable}
+        </label>
       </div>
 
       {/* select phone no */}

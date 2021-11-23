@@ -17,11 +17,32 @@ const Upload = () => {
   const [forgotAction, setForgotAction] = useState(false);
   const [placeHolder, setPlaceHolder] = useState("Password");
   const [closeEye, setCloseEye] = useState(false);
+  const [loginEmail, setLoginEmail] = useState(true);
 
   useEffect(() => {
     setShowModal(true);
     setModalTitle("Login To TikTok");
   }, []);
+
+  useEffect(() => {
+    if (forgotAction) {
+      if (loginEmail) {
+        setLeftlabel("Enter email address");
+        setRightLabel("Reset with phone number");
+      } else {
+        setLeftlabel("Enter phone number");
+        setRightLabel("Reset with email");
+      }
+    } else {
+      if (loginEmail) {
+        setLeftlabel("Phone");
+        setRightLabel("Log in with email or username");
+      } else {
+        setLeftlabel("Email or Username");
+        setRightLabel("Log in with phone");
+      }
+    }
+  }, [loginEmail]);
 
   const authHandler = (item) => {
     setShowItem(item.id);
@@ -107,6 +128,7 @@ const Upload = () => {
           pwdPlaceholder={placeHolder}
           eyes={closeEye}
           eyesHandler={eyesHandler}
+          rightLableHandler={() => setLoginEmail(!loginEmail)}
         />
       </Modal>
     </div>

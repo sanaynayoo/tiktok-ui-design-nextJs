@@ -13,6 +13,8 @@ const userEmail = ({
   eyesHandler,
   eyesAction,
   rightLableHandler,
+  emailPlaceHolder,
+  loginEmail,
 }) => {
   return (
     <div className={styles.container}>
@@ -27,24 +29,32 @@ const userEmail = ({
 
       {/* select phone no */}
 
-      <div className={styles.selectedContainer}>
-        <div className={styles.labelCountry}>
-          <label>US +1</label>
+      {/* email input */}
 
-          <Image
-            src="/static/icons/downArrow.svg"
-            alt="Dwon Arrow"
-            width={25}
-            height={25}
-          />
+      {loginEmail ? (
+        <div className={styles.selectedContainer}>
+          <div className={styles.labelCountry}>
+            <label>US +1</label>
+
+            <Image
+              src="/static/icons/downArrow.svg"
+              alt="Dwon Arrow"
+              width={25}
+              height={25}
+            />
+          </div>
+
+          <div className={styles.lineContent}>
+            <p></p>
+          </div>
+
+          <input type="text" placeholder="Phone Number" />
         </div>
-
-        <div className={styles.lineContent}>
-          <p></p>
+      ) : (
+        <div className={styles.emailInputContainer}>
+          <input type="text" placeholder={emailPlaceHolder} />
         </div>
-
-        <input type="text" placeholder="Phone Number" />
-      </div>
+      )}
 
       {/* enter code */}
 
@@ -59,34 +69,61 @@ const userEmail = ({
             </div>
           ) : null}
 
-          <div className={styles.pwdContainer}>
-            <input type="text" placeholder={pwdPlaceholder} />
-            <div className={styles.eyesContainer} onClick={eyesHandler}>
-              {eyesAction ? (
-                <Image
-                  src="/static/icons/openEye.svg"
-                  alt="Close Eye"
-                  width={18}
-                  height={18}
-                />
-              ) : (
-                <Image
-                  src="/static/icons/closeEye.svg"
-                  alt="Close Eye"
-                  width={18}
-                  height={18}
-                />
-              )}
+          {!loginEmail && (
+            <div className={styles.pwdContainer}>
+              <input type="text" placeholder={pwdPlaceholder} />
+              <div className={styles.eyesContainer} onClick={eyesHandler}>
+                {eyesAction ? (
+                  <Image
+                    src="/static/icons/openEye.svg"
+                    alt="Close Eye"
+                    width={18}
+                    height={18}
+                  />
+                ) : (
+                  <Image
+                    src="/static/icons/closeEye.svg"
+                    alt="Close Eye"
+                    width={18}
+                    height={18}
+                  />
+                )}
+              </div>
             </div>
-          </div>
+          )}
         </>
       ) : (
-        <div className={styles.enterCodeContainer}>
-          <input type="text" placeholder="Enter 4-digit Code" />
-          <div className={styles.enterCodeLabel}>
-            <label>Send code</label>
-          </div>
-        </div>
+        <>
+          {!loginEmail ? (
+            <div className={styles.pwdContainer}>
+              <input type="text" placeholder={pwdPlaceholder} />
+              <div className={styles.eyesContainer} onClick={eyesHandler}>
+                {eyesAction ? (
+                  <Image
+                    src="/static/icons/openEye.svg"
+                    alt="Close Eye"
+                    width={18}
+                    height={18}
+                  />
+                ) : (
+                  <Image
+                    src="/static/icons/closeEye.svg"
+                    alt="Close Eye"
+                    width={18}
+                    height={18}
+                  />
+                )}
+              </div>
+            </div>
+          ) : (
+            <div className={styles.enterCodeContainer}>
+              <input type="text" placeholder="Enter 4-digit Code" />
+              <div className={styles.enterCodeLabel}>
+                <label>Send code</label>
+              </div>
+            </div>
+          )}
+        </>
       )}
 
       {/* login password */}

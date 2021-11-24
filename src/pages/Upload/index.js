@@ -18,6 +18,7 @@ const Upload = () => {
   const [placeHolder, setPlaceHolder] = useState("Password");
   const [closeEye, setCloseEye] = useState(false);
   const [loginEmail, setLoginEmail] = useState(true);
+  const [emailPlaceHodler, setEmailPlaceHolder] = useState("");
 
   useEffect(() => {
     setShowModal(true);
@@ -44,6 +45,8 @@ const Upload = () => {
     }
   }, [loginEmail]);
 
+  // console.log('login email >>>', loginEmail);
+
   const authHandler = (item) => {
     setShowItem(item.id);
     setShowBackIcon(true);
@@ -53,6 +56,7 @@ const Upload = () => {
       setModalTitle("Log in");
       setLeftlabel("Phone");
       setRightLabel("Log in with email or username");
+      setLoginEmail(true);
       setShowPassword(false);
       setForgotAction(false);
     } else if (item.id === 3) {
@@ -103,6 +107,11 @@ const Upload = () => {
     setShowPassword(false);
   };
 
+  const rightLableHandler = () => {
+    setLoginEmail(!loginEmail);
+    setEmailPlaceHolder("Email or Username");
+  };
+
   return (
     <div className={styls.container}>
       <h3>Upload Page</h3>
@@ -128,7 +137,9 @@ const Upload = () => {
           pwdPlaceholder={placeHolder}
           eyes={closeEye}
           eyesHandler={eyesHandler}
-          rightLableHandler={() => setLoginEmail(!loginEmail)}
+          rightLableHandler={rightLableHandler}
+          emailPlaceHolder={emailPlaceHodler}
+          loginEmail={loginEmail}
         />
       </Modal>
     </div>

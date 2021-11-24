@@ -173,3 +173,26 @@
     margin-left: 10px;
   }
 }
+
+.emailInputContainer {
+  // copy from tiktok
+  border-radius: 4px;
+  position: relative;
+  margin-top: 8px;
+  background: rgba(22, 24, 35, 0.06);
+  border: 1.5px solid rgba(22, 24, 35, 0.06);
+  width: 100%;
+  margin-top: 10px;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 10px 0 10px;
+  input {
+    width: 80%;
+    padding: 16px 0 16px 0;
+    background: transparent;
+    outline: none;
+    border: none;
+  }
+}
